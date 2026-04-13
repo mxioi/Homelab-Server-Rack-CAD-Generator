@@ -10,6 +10,9 @@ __pycache__/
 exports/
 *.step
 *.stl
+!models/
+!models/*.step
+!models/*.stl
 
-# Local Claude settings
-.claude/settings.local.json
+# Claude local/config
+.claude/
