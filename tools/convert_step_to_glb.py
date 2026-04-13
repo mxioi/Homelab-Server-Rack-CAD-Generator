@@ -17,14 +17,17 @@ def convert_step_to_glb(step_path: Path, glb_path: Path) -> None:
 
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
-    step_file = root / "models" / "vevor_20u_rack.step"
-    glb_file = root / "docs" / "vevor_20u_rack.glb"
+    conversions = [
+        (root / "models" / "vevor_20u_rack.step", root / "docs" / "vevor_20u_rack.glb"),
+        (root / "models" / "vevor_20u_loaded.step", root / "docs" / "vevor_20u_loaded.glb"),
+    ]
 
-    if not step_file.exists():
-        raise FileNotFoundError(f"STEP file not found: {step_file}")
-
-    convert_step_to_glb(step_file, glb_file)
-    print(f"Generated: {glb_file}")
+    for step_file, glb_file in conversions:
+        if not step_file.exists():
+            print(f"Skipping missing file: {step_file}")
+            continue
+        convert_step_to_glb(step_file, glb_file)
+        print(f"Generated: {glb_file}")
 
 
 if __name__ == "__main__":

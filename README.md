@@ -14,7 +14,9 @@ This project is built for iterative rack planning:
 This repo includes a browser-based 3D viewer using `<model-viewer>`.
 
 - Viewer page source: `docs/index.html`
-- Web model: `docs/vevor_20u_rack.glb`
+- Web models:
+  - `docs/vevor_20u_loaded.glb` (loaded rack + devices)
+  - `docs/vevor_20u_rack.glb` (frame only)
 - Conversion script: `tools/convert_step_to_glb.py`
 
 ### Convert STEP -> GLB
@@ -25,6 +27,9 @@ python tools/convert_step_to_glb.py
 
 This converts:
 - `models/vevor_20u_rack.step` -> `docs/vevor_20u_rack.glb`
+- `models/vevor_20u_loaded.step` -> `docs/vevor_20u_loaded.glb`
+
+The viewer defaults to the loaded rack model and includes a button to switch to frame-only view.
 
 ### Publish on GitHub Pages
 
@@ -39,6 +44,7 @@ Expected viewer URL:
 ## Included rack model assets
 
 - `models/vevor_20u_rack.step` (full rack STEP model)
+- `models/vevor_20u_loaded.step` (rack with modeled contents)
 - `models/vevor_20u_rack.stl` (3D-viewable mesh model)
 
 GitHub note:
