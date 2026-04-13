@@ -1,0 +1,15 @@
+# Virtual environments
+.venv/
+.venv311/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated exports and heavy CAD artifacts
+exports/
+*.step
+*.stl
+
+# Local Claude settings
+.claude/settings.local.json
