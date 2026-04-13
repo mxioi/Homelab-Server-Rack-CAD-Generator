@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homelab Rack 3D Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #101317;
+        color: #e8edf2;
+      }
+      header {
+        padding: 16px 20px;
+        border-bottom: 1px solid #2a3240;
+      }
+      h1 {
+        margin: 0;
+        font-size: 18px;
+      }
+      p {
+        margin: 6px 0 0;
+        color: #b8c2cf;
+        font-size: 14px;
+      }
+      model-viewer {
+        width: 100vw;
+        height: calc(100vh - 84px);
+        --poster-color: #101317;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Homelab Server Rack CAD Model</h1>
+      <p>Drag to rotate, scroll to zoom, right-drag to pan.</p>
+    </header>
+
+    <model-viewer
+      src="./vevor_20u_rack.glb"
+      alt="Homelab server rack 3D model"
+      camera-controls
+      touch-action="pan-y"
+      auto-rotate
+      shadow-intensity="1"
+      environment-image="neutral"
+      exposure="1"
+    ></model-viewer>
+  </body>
+</html>

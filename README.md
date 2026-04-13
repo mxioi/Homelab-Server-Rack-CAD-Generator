@@ -9,6 +9,33 @@ This project is built for iterative rack planning:
 - clearance/collision adjustments
 - CAD exports for AutoCAD/Fusion workflows
 
+## Interactive 3D viewer (GitHub Pages)
+
+This repo includes a browser-based 3D viewer using `<model-viewer>`.
+
+- Viewer page source: `docs/index.html`
+- Web model: `docs/vevor_20u_rack.glb`
+- Conversion script: `tools/convert_step_to_glb.py`
+
+### Convert STEP -> GLB
+
+```powershell
+python tools/convert_step_to_glb.py
+```
+
+This converts:
+- `models/vevor_20u_rack.step` -> `docs/vevor_20u_rack.glb`
+
+### Publish on GitHub Pages
+
+1. Open repo **Settings** -> **Pages**.
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Select branch `main` and folder `/docs`.
+4. Save, then wait for publish.
+
+Expected viewer URL:
+- `https://mxioi.github.io/Homelab-Server-Rack-CAD-Generator/`
+
 ## Included rack model assets
 
 - `models/vevor_20u_rack.step` (full rack STEP model)
